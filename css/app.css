@@ -4,10 +4,10 @@
 
 /* Couleur principale du thème (orange) */
 :root {
-    --f7-theme-color: #e8590c;
-    --f7-theme-color-rgb: 232, 89, 12;
-    --f7-theme-color-shade: #cf5009;
-    --f7-theme-color-tint: #f06a1e;
+  --f7-theme-color: #10b981;
+  --f7-theme-color-rgb: 16, 185, 129;
+  --f7-theme-color-shade: #059669;
+  --f7-theme-color-tint: #34d399;
 }
 
 .page-content {
