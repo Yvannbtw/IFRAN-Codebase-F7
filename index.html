@@ -6,16 +6,13 @@
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, viewport-fit=cover"
     />
-    <meta name="theme-color" content="#e8590c" />
+    <meta name="theme-color" content="#10b981" />
     <title>Ma ToDo</title>
 
     <!-- Framework7 (CSS) -->
     <link rel="stylesheet" href="lib/framework7-bundle.min.css" />
     <!-- Police d'icônes Framework7 -->
-    <link
-      rel="stylesheet"
-      href="lib/framework7-icons/css/framework7-icons.css"
-    />
+    <link rel="stylesheet" href="lib/framework7-icons/css/framework7-icons.css" />
     <!-- Styles de l'application -->
     <link rel="stylesheet" href="css/app.css" />
   </head>
@@ -23,6 +20,7 @@
     <div id="app">
       <div class="view view-main view-init safe-areas">
         <div class="page">
+
           <!-- Barre de navigation (haut) -->
           <div class="navbar">
             <div class="navbar-bg"></div>
@@ -32,96 +30,42 @@
           </div>
 
           <div class="page-content">
-            <!-- =====================================================
-               SÉANCE 1 : afficher ici une liste de tâches EN DUR
-                 (composant "list" avec des cases à cocher).
-                ===================================================== -->
 
-            <div id="app">
-              <div class="view view-main view-init safe-areas">
-                <div class="page">
-                  <div class="navbar">
-                    <div class="navbar-bg"></div>
-                    <div class="navbar-inner">
-                      <div class="title">Ma ToDo</div>
-                    </div>
-                  </div>
-                  <div class="page-content">
-                    <!-- la liste viendra ici -->
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="list">
+            <!-- =====================================================
+               SÉANCE 2 : champ de saisie + bouton d'ajout
+            ===================================================== -->
+            <div class="list inset">
               <ul>
-                <li class="item-content">
-                  <div class="item-media">
-                    <label class="checkbox">
-                      <input type="checkbox" />
-                      <i class="icon-checkbox"></i>
-                    </label>
-                  </div>
+                <li class="item-content item-input">
                   <div class="item-inner">
-                    <div class="item-title">1</div>
-                  </div>
-                </li>
-                <li class="item-content">
-                  <div class="item-media">
-                    <label class="checkbox">
-                      <input type="checkbox" />
-                      <i class="icon-checkbox"></i>
-                    </label>
-                  </div>
-                  <div class="item-inner">
-                    <div class="item-title">2</div>
-                  </div>
-                </li>
-                <li class="item-content">
-                  <div class="item-media">
-                    <label class="checkbox">
-                      <input type="checkbox" />
-                      <i class="icon-checkbox"></i>
-                    </label>
-                  </div>
-                  <div class="item-inner">
-                    <div class="item-title">3</div>
-                  </div>
-                </li>
-                <li class="item-content">
-                  <div class="item-media">
-                    <label class="checkbox">
-                      <input type="checkbox" />
-                      <i class="icon-checkbox"></i>
-                    </label>
-                  </div>
-                  <div class="item-inner">
-                    <div class="item-title">4</div>
-                  </div>
-                </li>
-                <li class="item-content">
-                  <div class="item-media">
-                    <label class="checkbox">
-                      <input type="checkbox" />
-                      <i class="icon-checkbox"></i>
-                    </label>
-                  </div>
-                  <div class="item-inner">
-                    <div class="item-title">5</div>
+                    <div class="item-input-wrap">
+                      <input type="text" id="champ-tache" placeholder="Nouvelle tâche…" />
+                    </div>
                   </div>
                 </li>
               </ul>
             </div>
-            <!-- =====================================================
-               SÉANCE 2 : ajouter un champ + un bouton, puis
-                 générer la liste à partir d'un tableau JS
-                 (voir js/app.js). Ajouter / supprimer une tâche.
+            <div class="block">
+              <a href="#" class="button button-fill" id="btn-ajouter">Ajouter</a>
+            </div>
 
-               SÉANCE 3 : cocher/décocher, compteur, filtres,
-                 puis sauvegarde avec localStorage.
-               ===================================================== -->
+            <!-- =====================================================
+               SÉANCE 2 : liste générée dynamiquement depuis app.js
+            ===================================================== -->
+            <div class="list">
+              <ul class="liste-taches">
+                <!-- généré par afficher() dans app.js -->
+              </ul>
+            </div>
+
+            <!-- =====================================================
+               SÉANCE 3 : compteur + filtres (à venir)
+            ===================================================== -->
+
             <div class="block">
               <p class="text-color-gray">À compléter pendant les séances.</p>
             </div>
+
           </div>
         </div>
       </div>
