@@ -1,17 +1,198 @@
 /* ============================================================
-   Ma ToDo — styles de l'application
+   Ma ToDo — Styles complets (Light + Dark)
    ============================================================ */
 
-/* Couleur principale du thème (orange) */
+/* --- Variables --- */
 :root {
   --f7-theme-color: #10b981;
   --f7-theme-color-rgb: 16, 185, 129;
   --f7-theme-color-shade: #059669;
   --f7-theme-color-tint: #34d399;
+
+  --app-bg:           #f2f2f7;
+  --app-surface:      #ffffff;
+  --app-text:         #1c1c1e;
+  --app-text-muted:   #6e6e73;
+  --app-border:       rgba(0, 0, 0, 0.08);
+  --app-shadow:       0 2px 10px rgba(0, 0, 0, 0.07);
+  --app-radius:       14px;
+  --app-radius-sm:    10px;
+
+  --f7-page-bg-color: var(--app-bg);
 }
 
+html.dark {
+  --app-bg:           #0a0a0a;
+  --app-surface:      #1c1c1e;
+  --app-text:         #f5f5f7;
+  --app-text-muted:   #8e8e93;
+  --app-border:       rgba(255, 255, 255, 0.08);
+  --app-shadow:       0 2px 10px rgba(0, 0, 0, 0.4);
+
+  --f7-page-bg-color:           var(--app-bg);
+  --f7-list-bg-color:           var(--app-surface);
+  --f7-list-border-color:       var(--app-border);
+  --f7-list-item-border-color:  var(--app-border);
+}
+
+/* --- Transitions globales --- */
+.page, .navbar, .toolbar, .list ul, .item-content,
+.item-title, .block, .stat-card, .hero-title, .hero-sub {
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+/* --- Page --- */
 .page-content {
-    padding-bottom: 16px;
+  padding-bottom: 80px;
 }
 
-/* SÉANCE 3 : ajouter ici le style de la tâche cochée (texte barré) */
+/* --- Tâche cochée --- */
+.item-title.tache-faite {
+  text-decoration: line-through;
+  color: var(--app-text-muted);
+}
+
+/* --- Navbar --- */
+.navbar .navbar-bg {
+  background: var(--app-surface) !important;
+  box-shadow: 0 1px 0 var(--app-border);
+}
+
+.btn-theme-toggle {
+  color: var(--f7-theme-color) !important;
+}
+
+/* ============================================================
+   ACCUEIL
+   ============================================================ */
+
+/* Hero */
+.hero-block {
+  padding: 52px 32px 36px;
+  text-align: center;
+}
+
+.hero-emoji {
+  font-size: 80px;
+  display: block;
+  line-height: 1;
+  margin-bottom: 20px;
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+
+.hero-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--app-text);
+  margin: 0 0 8px;
+  letter-spacing: -0.4px;
+}
+
+.hero-sub {
+  font-size: 15px;
+  color: var(--app-text-muted);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Stats */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding: 0 16px 20px;
+}
+
+.stat-card {
+  background: var(--app-surface);
+  border-radius: var(--app-radius);
+  padding: 20px 8px;
+  text-align: center;
+  box-shadow: var(--app-shadow);
+}
+
+.stat-card--accent {
+  background: linear-gradient(145deg, #10b981, #059669);
+}
+
+.stat-card--accent .stat-number,
+.stat-card--accent .stat-label {
+  color: #fff !important;
+}
+
+.stat-number {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--app-text);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--app-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+}
+
+/* CTA accueil */
+.block .button.button-fill.button-large {
+  height: 52px;
+  line-height: 52px;
+  border-radius: var(--app-radius-sm) !important;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+/* ============================================================
+   TÂCHES
+   ============================================================ */
+
+/* Compteur */
+.compteur {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--app-text-muted);
+  text-align: center;
+  margin: 0 0 4px !important;
+  padding: 0 !important;
+}
+
+/* Filtres */
+.filtre-block {
+  padding: 0 16px 8px;
+}
+
+.segmented {
+  border-radius: var(--app-radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--f7-theme-color);
+}
+
+.segmented .button {
+  font-size: 13px;
+  font-weight: 600;
+  height: 38px;
+  line-height: 38px;
+  letter-spacing: 0.2px;
+}
+
+/* Bouton Ajouter */
+.block .button.button-fill {
+  border-radius: var(--app-radius-sm) !important;
+  font-weight: 600;
+  height: 48px;
+  line-height: 48px;
+}
+
+/* Liste de tâches en mode inset (carte) */
+.list.inset.liste-block {
+  margin-top: 8px;
+}
