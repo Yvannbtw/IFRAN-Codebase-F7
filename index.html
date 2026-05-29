@@ -18,61 +18,14 @@
   </head>
   <body>
     <div id="app">
-      <div class="view view-main view-init safe-areas">
-        <div class="page">
-
-          <!-- Barre de navigation (haut) -->
-          <div class="navbar">
-            <div class="navbar-bg"></div>
-            <div class="navbar-inner">
-              <div class="title">Ma ToDo</div>
-            </div>
-          </div>
-
-          <div class="page-content">
-
-            <!-- =====================================================
-               SÉANCE 2 : champ de saisie + bouton d'ajout
-            ===================================================== -->
-            <div class="list inset">
-              <ul>
-                <li class="item-content item-input">
-                  <div class="item-inner">
-                    <div class="item-input-wrap">
-                      <input type="text" id="champ-tache" placeholder="Nouvelle tâche…" />
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </div>
-            <div class="block">
-              <a href="#" class="button button-fill" id="btn-ajouter">Ajouter</a>
-            </div>
-
-            <!-- =====================================================
-               SÉANCE 2 : liste générée dynamiquement depuis app.js
-            ===================================================== -->
-            <div class="list">
-              <ul class="liste-taches">
-                <!-- généré par afficher() dans app.js -->
-              </ul>
-            </div>
-
-            <!-- =====================================================
-               SÉANCE 3 : compteur + filtres (à venir)
-            ===================================================== -->
-
-            <div class="block">
-              <p class="text-color-gray">À compléter pendant les séances.</p>
-            </div>
-
-          </div>
-        </div>
+      <div class="view view-main view-init safe-areas" data-url="/">
+        <!-- les pages viendront ici -->
       </div>
     </div>
 
     <!-- Framework7 (JS) -->
     <script src="lib/framework7-bundle.min.js"></script>
+    <script src="js/routes.js"></script>
     <script src="js/app.js"></script>
   </body>
 </html>

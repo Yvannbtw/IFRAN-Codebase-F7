@@ -1,6 +1,5 @@
 // ============================================================
-//  Ma ToDo — Séance 2
-//  Écran unique, sans routage.
+//  Ma ToDo — Séance 2 (avec routage)
 // ============================================================
 
 var $$ = Dom7;
@@ -9,14 +8,17 @@ var app = new Framework7({
     el: '#app',
     name: 'MaToDo',
     theme: 'auto',
+    routes: routes,
 });
+
+var mainView = app.views.create('.view-main', { url: '/' });
 
 // ------------------------------------------------------------
 //  SÉANCE 2 — Tableau de données
 // ------------------------------------------------------------
 var taches = [
-    { id: 1, texte: "Module F7 - Session 1", fait: false },
-    { id: 2, texte: "Module F7 - Session 2", fait: true  },
+    { id: 1, texte: "Module F7 - Session 1", fait: true },
+    { id: 2, texte: "Module F7 - Session 2", fait: true },
     { id: 3, texte: "Module F7 - Session 3", fait: false },
 ];
 
@@ -61,7 +63,12 @@ function supprimerTache(id) {
 
 // --- Écouteurs d'événements ---
 
-// Bouton "Ajouter"
+// Appel de afficher() quand la page taches est chargée par le routeur
+$$(document).on('page:init', '.page[data-name="taches"]', function () {
+    afficher();
+});
+
+// Bouton "Ajouter" (délégation sur document)
 $$(document).on('click', '#btn-ajouter', function () {
     var champ = $$('#champ-tache');
     ajouterTache(champ.val());
@@ -82,9 +89,6 @@ $$(document).on('click', '.btn-suppr', function (e) {
     var id = $$(this).parents('.item-content').attr('data-id');
     supprimerTache(id);
 });
-
-// Premier affichage
-afficher();
 
 // ------------------------------------------------------------
 //  SÉANCE 3 — à compléter :
