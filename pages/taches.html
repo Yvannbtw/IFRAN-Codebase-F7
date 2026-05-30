@@ -1,20 +1,27 @@
 <div class="page" data-name="taches">
 
-  <!-- Barre de navigation (haut) -->
+  <!-- Navbar -->
   <div class="navbar">
     <div class="navbar-bg"></div>
     <div class="navbar-inner">
-      <div class="title">Ma ToDo</div>
+      <div class="title">Mes tâches</div>
+      <div class="right">
+        <a href="#" class="link icon-only btn-theme-toggle">
+          <i class="icon f7-icons theme-icon">moon_stars</i>
+        </a>
+      </div>
     </div>
   </div>
 
-  <!-- Barre d'onglets (bas) -->
+  <!-- Tabbar bas -->
   <div class="toolbar tabbar toolbar-bottom">
     <div class="toolbar-inner">
       <a href="/" class="tab-link">
+        <i class="icon f7-icons">house_fill</i>
         <span class="tabbar-label">Accueil</span>
       </a>
       <a href="/taches/" class="tab-link tab-link-active">
+        <i class="icon f7-icons">checkmark_circle_fill</i>
         <span class="tabbar-label">Tâches</span>
       </a>
     </div>
@@ -22,9 +29,7 @@
 
   <div class="page-content">
 
-    <!-- =====================================================
-       SÉANCE 2 : champ de saisie + bouton d'ajout
-    ===================================================== -->
+    <!-- Champ de saisie -->
     <div class="list inset">
       <ul>
         <li class="item-content item-input">
@@ -36,25 +41,33 @@
         </li>
       </ul>
     </div>
+
+    <!-- Bouton Ajouter -->
     <div class="block">
       <a href="#" class="button button-fill" id="btn-ajouter">Ajouter</a>
     </div>
 
-    <!-- =====================================================
-       SÉANCE 2 : liste générée dynamiquement depuis app.js
-    ===================================================== -->
-    <div class="list">
-      <ul class="liste-taches">
-        <!-- généré par afficher() dans app.js -->
-      </ul>
+    
+
+    <!-- Filtres -->
+    <div class="filtre-block">
+      <div class="segmented">
+        <button class="button filtre-btn button-active" data-filtre="toutes">Toutes</button>
+        <button class="button filtre-btn" data-filtre="afaire">À faire</button>
+        <button class="button filtre-btn" data-filtre="faites">Faites</button>
+      </div>
+    </div>
+    
+    <!-- Compteur -->
+    <div class="block-header" style="padding: 8px 16px 4px; text-align:center;">
+      <p class="compteur">0 tâche(s) restante(s)</p>
     </div>
 
-    <!-- =====================================================
-       SÉANCE 3 : compteur + filtres (à venir)
-    ===================================================== -->
-
-    <div class="block">
-      <p class="text-color-gray">À compléter pendant les séances.</p>
+    <!-- Liste dynamique -->
+    <div class="list inset liste-block">
+      <ul class="liste-taches">
+        <!-- généré par afficher() -->
+      </ul>
     </div>
 
   </div>
